@@ -1369,23 +1369,23 @@ export default function LandingPage() {
               <div className="text-center mb-10">
                 <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 border border-cyan-500/30 bg-cyan-500/10 backdrop-blur-sm mb-4">
                   <User className="size-4 text-cyan-300" />
-                  <span className="text-sm font-medium text-cyan-300 retro-font">Dein Held</span>
+                  <span className="text-sm font-medium text-cyan-300 retro-font">Your Hero</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white retro-font mb-4">
-                  Erstelle Deinen Charakter
+                  Create Your Character
                 </h2>
                 <p className="text-white/50 max-w-2xl mx-auto retro-font text-lg">
-                  Wähle eine Vorlage oder beschreibe deinen eigenen Helden. Die KI erstellt einen einzigartigen Pixel-Avatar für dich.
+                  Choose a template or describe your own hero. The AI creates a unique pixel avatar for you.
                 </p>
               </div>
 
               {/* Name Input */}
               <div className="max-w-md mx-auto mb-8">
-                <label className="text-sm font-semibold text-white/90 block mb-2 retro-font">Wie heißt dein Held?</label>
+                <label className="text-sm font-semibold text-white/90 block mb-2 retro-font">What's your hero's name?</label>
                 <Input
                   value={agentName}
                   onChange={(e) => setAgentName(e.target.value)}
-                  placeholder="z.B. Max, Luna, Alex..."
+                  placeholder="e.g. Max, Luna, Alex..."
                   maxLength={30}
                   disabled={isGenerating}
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus-visible:border-cyan-400/60 focus-visible:ring-cyan-400/20 text-center"
@@ -1400,7 +1400,7 @@ export default function LandingPage() {
                   disabled={isGenerating}
                   className={!showCustom ? 'bg-emerald-500 hover:bg-emerald-400' : 'app-glass text-white/90 hover:bg-white/10'}
                 >
-                  <span className="mr-2">🎭</span> Vorlagen
+                  <span className="mr-2">🎭</span> Templates
                 </Button>
                 <Button
                   variant={showCustom ? 'default' : 'outline'}
@@ -1408,7 +1408,7 @@ export default function LandingPage() {
                   disabled={isGenerating}
                   className={showCustom ? 'bg-emerald-500 hover:bg-emerald-400' : 'app-glass text-white/90 hover:bg-white/10'}
                 >
-                  <span className="mr-2">✏️</span> Eigene Beschreibung
+                  <span className="mr-2">✏️</span> Custom Description
                 </Button>
               </div>
 
@@ -1440,12 +1440,12 @@ export default function LandingPage() {
               {showCustom && (
                 <div className="max-w-2xl mx-auto mb-8">
                   <label className="text-sm font-semibold text-white/90 block mb-2 retro-font">
-                    Beschreibe deinen Helden
+                    Describe your hero
                   </label>
                   <Textarea
                     value={customDescription}
                     onChange={(e) => setCustomDescription(e.target.value)}
-                    placeholder="z.B. Ein mutiger Ritter mit blauem Umhang und leuchtendem Schwert..."
+                    placeholder="e.g. A brave knight with a blue cape and a glowing sword..."
                     rows={4}
                     disabled={isGenerating}
                     className="resize-none bg-white/10 border-white/20 text-white placeholder:text-white/50 focus-visible:border-cyan-400/60 focus-visible:ring-cyan-400/20"
@@ -1456,7 +1456,7 @@ export default function LandingPage() {
               {/* Error Message */}
               {creationError && (
                 <div className="max-w-2xl mx-auto mb-6 rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-white/85">
-                  <div className="font-semibold text-red-400">Fehler</div>
+                  <div className="font-semibold text-red-400">Error</div>
                   <div className="mt-1 text-white/75">{creationError}</div>
                   <Button
                     variant="outline"
@@ -1464,7 +1464,7 @@ export default function LandingPage() {
                     className="mt-3 app-glass text-white/90 hover:bg-white/10"
                     onClick={() => setCreationError(null)}
                   >
-                    Erneut versuchen
+                    Try again
                   </Button>
                 </div>
               )}
@@ -1484,7 +1484,7 @@ export default function LandingPage() {
                   className="rounded-2xl bg-linear-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 font-bold retro-font shadow-lg shadow-cyan-500/20"
                 >
                   <Wand2 className="size-5" />
-                  {isGenerating ? 'Erstelle Avatar...' : 'Avatar erstellen & Starten'}
+                  {isGenerating ? 'Creating Avatar...' : 'Create Avatar & Start'}
                 </Button>
                 <Button
                   size="lg"
@@ -1494,13 +1494,13 @@ export default function LandingPage() {
                   className="rounded-2xl app-glass text-white/90 hover:bg-white/10 retro-font"
                 >
                   <ArrowRight className="size-5" />
-                  Direkt starten
+                  Quick Start
                 </Button>
               </div>
 
               {/* Info Text */}
               <p className="text-center text-xs text-white/40 mt-6 retro-font">
-                Die Avatar-Erstellung dauert einen Moment. Du kannst auch ohne eigene Figur loslegen.
+                Avatar creation takes a moment. You can also start without a custom character.
               </p>
             </div>
           </div>
@@ -1508,8 +1508,8 @@ export default function LandingPage() {
 
         {/* Generating Overlay */}
         {isGenerating && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center">
-            <div className="rounded-3xl p-8 max-w-sm mx-4 text-center bg-black/60 border border-cyan-500/20 backdrop-blur-xl">
+          <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
+            <div className="rounded-3xl p-8 max-w-sm mx-4 text-center bg-gradient-to-b from-gray-900/80 to-black/80 border border-cyan-500/30 shadow-2xl shadow-cyan-500/10">
               <div className="relative w-20 h-20 mx-auto mb-6">
                 <div className="absolute inset-0 border-4 border-cyan-500/20 rounded-full" />
                 <div className="absolute inset-0 border-4 border-cyan-500 rounded-full animate-spin border-t-transparent" />
@@ -1522,21 +1522,21 @@ export default function LandingPage() {
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-white/95 mb-2 retro-font">
-                {phase === 'character' ? 'Erschaffe Charakter...' : 'Erstelle Pixel-Avatar...'}
+                {phase === 'character' ? 'Creating Character...' : 'Creating Pixel Avatar...'}
               </h3>
               <p className="text-sm text-white/70 mb-6 retro-font">
                 {phase === 'character' 
-                  ? 'Die KI durchsucht die Helden-Garderobe.' 
-                  : 'Deine einzigartige Figur wird gepixelt.'}
+                  ? 'The AI is browsing the hero wardrobe.' 
+                  : 'Your unique character is being pixelated.'}
               </p>
               <div className="w-full bg-white/10 rounded-full h-2 overflow-hidden">
                 <div 
-                  className="h-full bg-linear-to-r from-cyan-500 to-emerald-500 transition-all duration-300"
+                  className="h-full bg-gradient-to-r from-cyan-400 to-cyan-600 transition-all duration-300"
                   style={{ width: `${progress}%` }}
                 />
               </div>
               <p className="text-xs text-white/60 mt-4 retro-font">
-                Einen Moment Geduld...
+                Please wait a moment...
               </p>
             </div>
           </div>
