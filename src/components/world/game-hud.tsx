@@ -29,6 +29,7 @@ const AREA_LABEL: Record<WorldArea, string> = {
   ai_university: 'AI University',
   ai_labor: 'AI Lab',
   design_atelier: 'Design Atelier',
+  security_hub: 'Security Hub',
 }
 
 const AREA_HINT: Partial<Record<WorldArea, string>> = {
@@ -115,6 +116,7 @@ export function GameHUD({
       ai_university: 1,
       ai_labor: 2,
       design_atelier: 3,
+      security_hub: 4,
     }
 
     return [...byId.values()]

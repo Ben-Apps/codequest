@@ -71,6 +71,7 @@ const LESSONS_COMPLETED_STORAGE_KEY = 'agentmind_lessons_completed_v1'
 const CUSTOM_AGENTS_STORAGE_KEY = 'agentmind_custom_agents_v1'
 const SPAWNED_MOBS_STORAGE_KEY = 'agentmind_spawned_mobs_v1'
 const FARMER_MODE_STORAGE_KEY = 'agentmind_farmer_mode_v1'
+const MUSIC_MUTED_STORAGE_KEY = 'agentmind_music_muted_v1'
 
 export default function WorldPage() {
   const [area, setArea] = useState<WorldArea>('outside')
